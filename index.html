@@ -756,7 +756,11 @@
           <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark mode">
             <i data-lucide="moon"></i>
           </button>
-          <a class="source-link" id="sourceLink" href="#" target="_blank" rel="noreferrer">
+          <a class="source-link" href="https://subhajithait.com" target="_blank" rel="noreferrer">
+            <i data-lucide="user"></i>
+            <span>Author</span>
+          </a>
+          <a class="source-link" id="sourceLink" href="https://github.com/subho004/ml-graph-learning-notebook" target="_blank" rel="noreferrer">
             <i data-lucide="external-link"></i>
             <span>Open source</span>
           </a>
@@ -1160,7 +1164,6 @@
       dom.pageTitle.textContent = record.title;
       dom.pagePath.textContent = record.path;
       dom.crumb.textContent = `${record.section} / ${record.title}`;
-      dom.sourceLink.href = fileUrl(record.path);
       document.title = `${record.title} - ML Notes Book`;
     }
 
