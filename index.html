@@ -209,7 +209,7 @@
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
       gap: 8px;
       color: var(--muted);
       font-size: 12px;
@@ -909,7 +909,47 @@
       "ml/036-artificial-neural-networks/036-artificial-neural-networks-expanded.md",
       "ml/036-artificial-neural-networks/036-artificial-neural-networks.md",
       "ml/037-encoder-decoder-transformer-architecture/037-encoder-decoder-transformer-architecture-expanded.md",
-      "ml/037-encoder-decoder-transformer-architecture/037-encoder-decoder-transformer-architecture.md"
+      "ml/037-encoder-decoder-transformer-architecture/037-encoder-decoder-transformer-architecture.md",
+      "ml/038-sequence-models-rnn-lstm-gru/038-sequence-models-rnn-lstm-gru-expanded.md",
+      "ml/038-sequence-models-rnn-lstm-gru/038-sequence-models-rnn-lstm-gru.md",
+      "ml/039-ridge-lasso-elastic-net-regularization/039-ridge-lasso-elastic-net-regularization-expanded.md",
+      "ml/039-ridge-lasso-elastic-net-regularization/039-ridge-lasso-elastic-net-regularization.md",
+      "ml/040-gaussian-mixture-models-dbscan/040-gaussian-mixture-models-dbscan-expanded.md",
+      "ml/040-gaussian-mixture-models-dbscan/040-gaussian-mixture-models-dbscan.md",
+      "ml/041-adaboost-gradient-boosting/041-adaboost-gradient-boosting-expanded.md",
+      "ml/041-adaboost-gradient-boosting/041-adaboost-gradient-boosting.md",
+      "ml/042-isolation-forest-one-class-svm-anomaly-detection/042-isolation-forest-one-class-svm-anomaly-detection-expanded.md",
+      "ml/042-isolation-forest-one-class-svm-anomaly-detection/042-isolation-forest-one-class-svm-anomaly-detection.md",
+      "ml/043-word-embeddings-word2vec-glove/043-word-embeddings-word2vec-glove-expanded.md",
+      "ml/043-word-embeddings-word2vec-glove/043-word-embeddings-word2vec-glove.md",
+      "ml/044-arima-time-series-forecasting/044-arima-time-series-forecasting-expanded.md",
+      "ml/044-arima-time-series-forecasting/044-arima-time-series-forecasting.md",
+      "ml/045-hidden-markov-models/045-hidden-markov-models-expanded.md",
+      "ml/045-hidden-markov-models/045-hidden-markov-models.md",
+      "ml/046-vision-transformers/046-vision-transformers-expanded.md",
+      "ml/046-vision-transformers/046-vision-transformers.md",
+      "ml/047-self-organizing-maps/047-self-organizing-maps-expanded.md",
+      "ml/047-self-organizing-maps/047-self-organizing-maps.md",
+      "ml/048-restricted-boltzmann-machines-deep-belief-networks/048-restricted-boltzmann-machines-deep-belief-networks-expanded.md",
+      "ml/048-restricted-boltzmann-machines-deep-belief-networks/048-restricted-boltzmann-machines-deep-belief-networks.md",
+      "ml/049-meta-learning-few-shot-learning/049-meta-learning-few-shot-learning-expanded.md",
+      "ml/049-meta-learning-few-shot-learning/049-meta-learning-few-shot-learning.md",
+      "ml/050-genetic-algorithms/050-genetic-algorithms-expanded.md",
+      "ml/050-genetic-algorithms/050-genetic-algorithms.md",
+      "ml/051-spiking-neural-networks/051-spiking-neural-networks-expanded.md",
+      "ml/051-spiking-neural-networks/051-spiking-neural-networks.md",
+      "generative-models/001-autoencoders-variational-autoencoders/001-autoencoders-variational-autoencoders-expanded.md",
+      "generative-models/001-autoencoders-variational-autoencoders/001-autoencoders-variational-autoencoders.md",
+      "generative-models/002-generative-adversarial-networks/002-generative-adversarial-networks-expanded.md",
+      "generative-models/002-generative-adversarial-networks/002-generative-adversarial-networks.md",
+      "generative-models/003-diffusion-models/003-diffusion-models-expanded.md",
+      "generative-models/003-diffusion-models/003-diffusion-models.md",
+      "reinforcement-learning/001-q-learning-deep-q-networks/001-q-learning-deep-q-networks-expanded.md",
+      "reinforcement-learning/001-q-learning-deep-q-networks/001-q-learning-deep-q-networks.md",
+      "reinforcement-learning/002-rlhf-reinforcement-learning-from-human-feedback/002-rlhf-reinforcement-learning-from-human-feedback-expanded.md",
+      "reinforcement-learning/002-rlhf-reinforcement-learning-from-human-feedback/002-rlhf-reinforcement-learning-from-human-feedback.md",
+      "distributed-ml/001-federated-learning/001-federated-learning-expanded.md",
+      "distributed-ml/001-federated-learning/001-federated-learning.md"
     ];
 
     const state = {
@@ -972,7 +1012,12 @@
         const files = treeData.tree
           .filter((item) => item.type === 'blob' && item.path.toLowerCase().endsWith('.md'))
           .map((item) => item.path)
-          .filter((path) => path === 'ML Notes.md' || path.startsWith('ml/') || path.startsWith('graph-ml/'))
+          .filter((path) => path === 'ML Notes.md'
+            || path.startsWith('ml/')
+            || path.startsWith('graph-ml/')
+            || path.startsWith('generative-models/')
+            || path.startsWith('reinforcement-learning/')
+            || path.startsWith('distributed-ml/'))
           .sort(sortPaths);
         return files.length ? files : FALLBACK_FILES;
       } catch (error) {
@@ -992,7 +1037,12 @@
         .split('-')
         .filter(Boolean)
         .map((word) => {
-          const upper = new Set(['ml', 'gnn', 'svm', 'knn', 'pca', 'cart', 'cnn', 'nlp', 'xgboost']);
+          const upper = new Set([
+            'ml', 'gnn', 'svm', 'knn', 'pca', 'cart', 'cnn', 'nlp', 'xgboost',
+            'rnn', 'lstm', 'gru', 'gan', 'gans', 'vae', 'vaes', 'gmm', 'dbscan',
+            'arima', 'hmm', 'rbm', 'dbn', 'som', 'snn', 'maml', 'vit', 'rlhf',
+            'dpo', 'ppo', 'dqn', 'ucb', 'glove'
+          ]);
           return upper.has(word) ? word.toUpperCase() : word.charAt(0).toUpperCase() + word.slice(1);
         })
         .join(' ');
@@ -1002,14 +1052,23 @@
       return decodeURIComponent(path).replace(/^\/+/, '');
     }
 
+    const SECTION_INFO = {
+      'ml': { name: 'ML', order: 1 },
+      'graph-ml': { name: 'Graph ML', order: 2 },
+      'generative-models': { name: 'Generative Models', order: 3 },
+      'reinforcement-learning': { name: 'Reinforcement Learning', order: 4 },
+      'distributed-ml': { name: 'Distributed ML', order: 5 }
+    };
+
     function recordFromPath(path) {
       const parts = path.split('/');
       const fileName = parts.at(-1);
       const fileSlug = fileName.replace(/\.md$/i, '');
       const isExpanded = /-expanded$/i.test(fileSlug);
       const top = parts[0];
-      const section = top === 'ml' ? 'ML' : top === 'graph-ml' ? 'Graph ML' : 'Overview';
-      const sectionOrder = top === 'ml' ? 1 : top === 'graph-ml' ? 2 : 0;
+      const sectionInfo = SECTION_INFO[top];
+      const section = sectionInfo ? sectionInfo.name : 'Overview';
+      const sectionOrder = sectionInfo ? sectionInfo.order : 0;
       const folder = parts.length > 1 ? parts[1] : fileSlug;
       const numberMatch = folder.match(/^(\d+)/);
       const number = numberMatch ? Number(numberMatch[1]) : 0;
@@ -1046,14 +1105,13 @@
     }
 
     function renderStats() {
-      const ml = state.records.filter((record) => record.section === 'ML' && record.variant === 'base').length;
-      const graph = state.records.filter((record) => record.section === 'Graph ML' && record.variant === 'base').length;
+      const sectionOrder = ['ML', 'Graph ML', 'Generative Models', 'Reinforcement Learning', 'Distributed ML'];
+      const counts = sectionOrder
+        .map((name) => ({ name, count: state.records.filter((record) => record.section === name && record.variant === 'base').length }))
+        .filter((entry) => entry.count > 0);
       const files = state.records.length;
-      dom.stats.innerHTML = `
-        <div class="stat"><strong>${ml}</strong>ML</div>
-        <div class="stat"><strong>${graph}</strong>Graph ML</div>
-        <div class="stat"><strong>${files}</strong>Files</div>
-      `;
+      dom.stats.innerHTML = counts.map((entry) => `<div class="stat"><strong>${entry.count}</strong>${escapeHtml(entry.name)}</div>`).join('')
+        + `<div class="stat"><strong>${files}</strong>Files</div>`;
     }
 
     function renderChapters() {
