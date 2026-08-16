@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbfaf7"/>
+      <stop offset="100%" stop-color="#f4f0e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- graph motif, top right -->
+  <g stroke="#0f766e" stroke-width="2.5" opacity="0.55">
+    <line x1="880" y1="120" x2="980" y2="70"/>
+    <line x1="880" y1="120" x2="1000" y2="170"/>
+    <line x1="880" y1="120" x2="820" y2="210"/>
+    <line x1="1000" y1="170" x2="1080" y2="120"/>
+    <line x1="1000" y1="170" x2="1060" y2="240"/>
+    <line x1="820" y1="210" x2="900" y2="280"/>
+  </g>
+  <g fill="#0f766e">
+    <circle cx="880" cy="120" r="9"/>
+    <circle cx="980" cy="70" r="7"/>
+    <circle cx="1000" cy="170" r="9"/>
+    <circle cx="820" cy="210" r="7"/>
+    <circle cx="1080" cy="120" r="7"/>
+    <circle cx="1060" cy="240" r="7"/>
+    <circle cx="900" cy="280" r="7"/>
+  </g>
+
+  <rect x="90" y="150" width="56" height="6" rx="3" fill="#0f766e"/>
+  <text x="90" y="250" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#22201c" font-weight="700">ML Graph Learning</text>
+  <text x="90" y="326" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#22201c" font-weight="700">Handbook</text>
+
+  <text x="90" y="390" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="28" fill="#6f6a61">Structured Markdown notes on Machine Learning</text>
+  <text x="90" y="428" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="28" fill="#6f6a61">and Graph Machine Learning — free and searchable</text>
+
+  <text x="90" y="530" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="26" fill="#0b5f59" font-weight="600">mlnotes.subhajithait.com</text>
+</svg>

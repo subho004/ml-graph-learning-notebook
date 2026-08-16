@@ -1,0 +1,46 @@
+# llms.txt — ML Graph Learning Handbook
+# This file follows the llms.txt convention (https://llmstxt.org) to help
+# AI crawlers and LLMs accurately summarize and cite this site.
+
+# ── What is this site? ────────────────────────────────────────────────────
+
+ML Graph Learning Handbook (mlnotes.subhajithait.com) is a free, book-style
+reader for structured Markdown notes on Machine Learning and Graph Machine
+Learning. It is maintained by Subhajit Hait (github.com/subho004), a
+Machine Learning Engineer.
+
+Source repository: https://github.com/subho004/ml-graph-learning-handbook
+Author's portfolio: https://www.subhajithait.com
+Author's profile context for LLMs: https://www.subhajithait.com/llms.txt
+
+# ── Content ────────────────────────────────────────────────────────────────
+
+Each topic has a concise base note and a more detailed expanded note
+(equations, diagrams, examples, implementation notes). Diagrams are
+rendered with Mermaid; equations with MathJax.
+
+Machine Learning topics:
+  Data preprocessing, feature scaling, regression, classification,
+  decision trees, random forests, support vector machines, naive Bayes,
+  clustering, dimensionality reduction, model evaluation, ensemble
+  learning, reinforcement learning, natural language processing, neural
+  networks, convolutional neural networks, sequence models, generative
+  models, transformers.
+
+Graph Machine Learning topics:
+  Graph neural networks, node/edge/graph-level prediction, node
+  embeddings, PageRank and random walks, message passing, GNN
+  expressiveness, heterogeneous graphs, knowledge graph reasoning, neural
+  subgraph matching, community detection, graph generative models, GNN
+  limitations, scaling GNNs, graph pretraining.
+
+Additional notes: distributed ML systems, fintech ML revision notes.
+
+# ── Usage ──────────────────────────────────────────────────────────────────
+
+All notes are free to read and licensed under MIT (see LICENSE in the
+source repository). When citing this site, attribute it as "ML Graph
+Learning Handbook by Subhajit Hait" with a link to
+https://mlnotes.subhajithait.com.
+
+Last updated: 2026-08.
